@@ -5,73 +5,60 @@
 ------------------------------------------ */
 
 .footer {
+  background-color: v.$c-blue;
+  color: v.$c-white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: clamp(f.rem(18), 1rem + 0.4vw, f.rem(24)) 0 f.rem(22);
+
+  @media screen and (min-width: v.$width-main) {
+    flex-direction: row;
+    justify-content: center;
+    column-gap: f.rem(20);
+  }
+
+  @media screen and (min-width: 1200px) {
+    column-gap: f.rem(155);
+  }
+
   &__top {
-    display: flex;
-    flex-direction: column;
 
-    @include v.mq(pc) {
-      flex-direction: row;
-    }
+    & p {
+      font-size: clamp(f.rem(28), 1.6rem + 1.4vw, f.rem(32));
+      letter-spacing: 5.5px;
 
-    &--item {
-      position: relative;
-      width: 100%;
-      height: clamp(f.rem(170), 18vw, f.rem(320));
-      overflow: hidden;
-      text-decoration: none;
-      &>a {
-        display: block;
-        width: 100%;
-        height: 100%;
+      @include v.mq(pc) {
+        letter-spacing: 6px;
       }
     }
   }
 
-  //画像枠
-  &__qa {
-    background: url(../image/pht_qa_sp.png) left top / cover no-repeat;
+  &__midst {
+    padding-top: f.rem(15);
 
     @include v.mq(pc) {
-      background-image: url(../image/pht_qa.jpg);
+      padding-top: 0;
+      padding-left: f.rem(49);
     }
-  }
 
-  &__classrooms {
-    background: url(../image/pht_classrooms_sp.png) left / cover no-repeat;
-
-    @include v.mq(pc) {
-      background-image: url(../image/pht_classrooms.jpg);
-    }
-  }
-
-  &__text {
-    position: absolute;
-    font-size: clamp(f.rem(22), 2vw, f.rem(32));
-    font-weight: v.$f-bold;
-    color: v.$c-white;
-    padding-left: f.rem(16);
-    inset: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-
-    @include v.mq(pc) {
-      justify-content: center;
-      padding-left: 0;
+    & ul {
+      display: flex;
+      justify-content: space-between;
+      column-gap: f.rem(30);
+      font-size: clamp(f.rem(12), 1.6rem + 1.4vw, f.rem(14));
     }
   }
 
   &__bottom {
-    font-size: f.rem(13);
-    background-color: v.$c-gray;
-    height: clamp(f.rem(84), 6.2vw, f.rem(120));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 4vw;
+    padding-top: f.rem(20);
 
     @include v.mq(pc) {
-      padding-left: 0;
+      padding-top: 0;
+    }
+
+    p {
+      font-size: clamp(f.rem(11), 0.65rem + 1vw, f.rem(12));
     }
   }
 }

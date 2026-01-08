@@ -4,19 +4,11 @@
 
 /* 共通事項
 ------------------------------------------ */
-
-// 仕様書より追加
-// ヘッダーのアンカーリンクにはスムーススクロールを使用してください。
-html{
-  scroll-behavior: smooth;
-}
 body {
   font-family: v.$f-main;
-  line-height: f.rem(36);
+  line-height: v.$lh-main;
   @include v.rem(16);
   color: v.$c-base;
-  margin: 0;
-  padding: 0;
 }
 
 img {
@@ -26,13 +18,13 @@ img {
 }
 
 a {
-  color: v.$c-base;
   text-decoration: none;
-  transition: opacity 0.3s ease;;
-}
-// リンクはマウスオーバー時に透過させる
-a:hover{
-  opacity: 0.6;
+  color: inherit;
+  transition: all 1s;
+
+  &:hover {
+    color: inherit;
+  }
 }
 
 ul {

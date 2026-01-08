@@ -1,41 +1,52 @@
 @use '../foundation/variables'as v;
 @use '../foundation/functions'as f;
 
-/* ボタンの共通スタイル */
+/* ボタンの共通スタイル
+------------------------------------------ */
 .button {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: f.rem(40);
-    font-weight: v.$f-bold;
+    font-weight: v.$f-semibold;
+    font-size: f.rem(18);
+    color: v.$c-white;
+    width: f.rem(300);
+    height: f.rem(58);
 
-    &__white {
-        height: f.rem(66);
-        width: f.rem(350);
-        background-color: v.$c-white;
-        color: v.$c-blue;
-        margin: f.rem(33) auto;
+    &__on {
+        background-color: v.$c-green-on;
 
-        @include v.mq(pc) {
-            height: f.rem(61);
-            width: f.rem(282);
-            color: v.$c-white;
-            background: v.$c-gradient;
-            margin-right: f.rem(19);
+        @media screen and (min-width: v.$width-main) {
+            margin-right: f.rem(32);
         }
     }
 
-    &__blue {
-        color: v.$c-white;
-        width: clamp(f.rem(305), 22vw, f.rem(360));
-        height: clamp(f.rem(69), 4.5vw, f.rem(75));
-        background: v.$c-gradient;
-        font-size: clamp(f.rem(20), 1.6vw, f.rem(24));
-        margin-top: clamp(f.rem(10), 1.6vw, f.rem(19));
-        margin-inline: auto;
-
-        @include v.mq(pc) {
-            padding-left: f.rem(22);
-        }
+    &__buy {
+        background-color: v.$c-green-buy;
     }
+}
+
+
+/* ページトップへ戻るボタン
+------------------------------------------ */
+.button-to-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: f.rem(16);
+    right: 4%;
+    width: f.rem(40);
+    height: f.rem(42);
+    color: v.$c-white;
+    background-color: v.$c-blue;
+    @include v.mq(pc) {
+        right: 10%;
+    }
+}
+
+/* footer 上に来た時の状態 */
+.button-to-top.is-footer {
+    position: absolute;
 }

@@ -2,23 +2,13 @@
 @use '../foundation/functions'as f;
 
 /* フォントの共通スタイル */
-.poppins{
-    font-family: v.$f-Poppins;
-    &__ita{
-      font-weight: v.$f-Exbold;
-      font-style: italic;
-    }
-}
-.pink{
-  color: v.$c-pink;
+// Font Marcellus
+.marcellus{
+  font-family: v.$f-marcellus;
 }
 
-h3{
-  font-size: clamp(f.rem(28), 3vw, f.rem(36));
-  font-weight: v.$f-bold;
-  text-align: center;
-  padding-left: 4vw;
-  @include v.mq(pc) {
-    padding-left: 0;
-  }
+
+// Font EB Garamond
+.eb{
+  font-family:v.$f-eb-garamond;
 }

@@ -1,36 +1,69 @@
-// ハンバーガーメニュー
-var hamburger = $('.hamburger-menu');
+// ページトップへ戻るボタン
+// -------------------------------------------
+var buttonToTop = $('#button-to-top');
+var footer = $('.footer');
+var speed = 600;
 
-// OPEN/CLOSEボタンをクリックしたら
-$('.hamburger__button').on('click', function () {
-
-  // .hamburgerの表示・非表示を繰り返す
-  hamburger.toggleClass('hamburger-nav-active');
-
+// トップへ戻る
+buttonToTop.on('click', function () {
+  $('html, body').animate({ scrollTop: 0 }, speed);
+  return false;
 });
 
-// 画面幅のサイズが変わったら
-$(window).on('resize', function () {
+// スクロール監視
+$(window).on('scroll resize', function () {
+  var scrollTop = $(window).scrollTop();
+  var windowHeight = $(window).height();
+  var footerTop = $('.footer').offset().top;
 
-  // ハンバーガーメニューを閉じる
-  hamburger.removeClass('hamburger-nav-active');
+  var overlap = scrollTop + windowHeight - footerTop;
+
+  if (overlap > 0) {
+    // footerに重なった分だけ持ち上げる
+    buttonToTop.css({
+      bottom: overlap
+    });
+  } else {
+    buttonToTop.css({
+      bottom: 16
+    });
+  }
 });
 
-// メニュー一覧をクリックしたら
-$('.hamburger-nav-list').on('click', function () {
-
-  // ハンバーガーメニューを閉じる
-  hamburger.removeClass('hamburger-nav-active');
-
-});
 
 // -------------------------------------------
-// Smart Tab
-$(window).on('load', function () {
-  $('#smarttab').smartTab({
-    enableUrlHash: false,
-    autoAdjustHeight: false,
-    animation: false
-  });
+// スライド
+new Swiper('.swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 40,
+  centeredSlides: true,
+
+  breakpoints: {
+    768: {
+      slidesPerGroup: 3, // PCでは3枚を1ページ扱い
+      centeredSlides: false,
+    }
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
 
+// -------------------------------------------------
+// アコーディオンメニュー
+// アコーディオンのタイトルがクリックされたら
+$('.accordion-section').on('click', function (e) {
+
+  // .accordion-contentを選択
+  var content = $(this).next();
+
+  // .accordion-contentを表示・非表示
+  content.slideToggle();
+  // アイコンの向きを変える
+  $(this).children('.bi-caret-down-fill').toggleClass("open", 300);
+});

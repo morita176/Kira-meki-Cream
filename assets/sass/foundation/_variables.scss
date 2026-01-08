@@ -5,27 +5,30 @@
 //------------------------------------
 
 // Font Family
-$f-main: 'Noto Sans JP',
-sans-serif;
+$f-main: 'Noto Serif JP',
+serif;
 
 // Font Noto Serif
 $f-Serif: 'Noto Serif JP',
 serif;
 
-// Font Poppins
-$f-Poppins: 'Poppins',
-sans-serif;
+// Font Marcellus
+$f-marcellus: 'Marcellus',
+serif;
+
+// Font EB Garamond
+$f-eb-garamond: 'EB Garamond',
+serif;
 
 // root Size
 $fz-root: 16;
 
 // fontサイズ: ;
-$f-ExLight:200;
 $f-regular: 400;
 $f-medium:500;
+$f-semibold:600;
 $f-bold:700;
-$f-Exbold:800;
-$f-heavy:900;
+
 
 // Font Size rem変換
 @mixin rem($size) {
@@ -44,19 +47,16 @@ $lh-main: 1.75;
 //-----------------------------------
 //Color
 //-----------------------------------
-$c-base: #333333;
-$c-white: #ffffff;
-$c-gray: #dddddd;
-$c-li-gray:#F0F0F0;
-$c-pink:#F11F8D;
-$c-li-pink:rgba(255, 85, 85, 0.1);
-$c-blue:#005BAC;
-$c-skyblue:#3AC8AD;
-$c-li-blue:#F2F9FF;
-$c-gradient:linear-gradient(135deg, #0271E0, #53A2F0);
-$c-shadow:rgba(0, 0, 0, 0.2);
-$c-green:#77CB33;
-$c-orange:#F6AA00;
+$c-base: #000;
+$c-black:#111;
+$c-white:#ffffff;
+$c-blue:#0071CE;
+$c-green-on:#46C4DB;
+$c-green-buy:#5DD5AB;
+$c-green-arrow:#00AFBF;
+$c-li-green:#DBF7F9;
+$c-gray:#F0F4FF;
+$c-gray-dot:#eee;
 
 //-----------------------------------
 //Pass
@@ -69,7 +69,7 @@ $pass: '../images/';
 //-----------------------------------
 $breakpoints: (sp: 'screen and (max-width: 767px)',
   pc: 'screen and (min-width: 768px)',
-  pc-wide: 'screen and (min-width: 1200px)',
+  pc-wide: 'screen and (min-width: 1032px)',
 );
 
 
@@ -94,4 +94,4 @@ $base-width-pc: 1920;
 //Contents Width
 //-----------------------------------
 $width-main: 950px;
-$width-wide: 1200px;
+$width-wide: 1000px;

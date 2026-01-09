@@ -46,14 +46,20 @@
     }
 
     &--text {
-      font-size: clamp(f.rem(18), 0.9rem + 1.6vw, f.rem(24));
+      font-size: f.rem(18);
       letter-spacing: 2px;
+      @include v.mq(pc) {
+        font-size: f.rem(24);
+      }
     }
 
     &--price {
-      font-size: clamp(f.rem(14), 0.8rem + 0.2vw, f.rem(16));
+      font-size: f.rem(14);
       letter-spacing: 1.5px;
       line-height: 1.5;
+            @include v.mq(pc) {
+        font-size: f.rem(16);
+      }
     }
   }
 }

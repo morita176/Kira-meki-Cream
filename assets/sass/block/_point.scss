@@ -5,17 +5,25 @@
 ------------------------------------------ */
 .point {
   position: relative;
-  aspect-ratio: 390 / 680;
+  overflow: hidden;
 
-  @include v.mq(pc) {
-    aspect-ratio: 1500 / 550;
+  @media screen and (min-width: 550px) {
+    height: f.rem(550);
+  }
+  @media screen and (min-width: 1499px) {
+    height: auto;
   }
 
   &__img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 40% 80%;
+    }
   }
 
   &__content {

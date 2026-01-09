@@ -354,12 +354,12 @@ ul {
 }
 .cover__title {
   position: absolute;
-  top: 50.5vh;
+  top: 26rem;
   left: 6vw;
 }
 @media screen and (min-width: 768px) {
   .cover__title {
-    top: 31.5vh;
+    top: 17rem;
     left: 15vw;
   }
 }
@@ -427,13 +427,23 @@ ul {
   }
 }
 .contact__top--text {
-  font-size: clamp(1.125rem, 0.9rem + 1.6vw, 1.5rem);
+  font-size: 1.125rem;
   letter-spacing: 2px;
 }
+@media screen and (min-width: 768px) {
+  .contact__top--text {
+    font-size: 1.5rem;
+  }
+}
 .contact__top--price {
-  font-size: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+  font-size: 0.875rem;
   letter-spacing: 1.5px;
   line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+  .contact__top--price {
+    font-size: 1rem;
+  }
 }
 
 .contact2 {
@@ -445,18 +455,27 @@ ul {
 ------------------------------------------ */
 .point {
   position: relative;
-  aspect-ratio: 390/680;
+  overflow: hidden;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 550px) {
   .point {
-    aspect-ratio: 1500/550;
+    height: 34.375rem;
+  }
+}
+@media screen and (min-width: 1499px) {
+  .point {
+    height: auto;
   }
 }
 .point__img {
   width: 100%;
   height: 100%;
+}
+.point__img img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: 40% 80%;
 }
 .point__content {
   position: absolute;
@@ -549,8 +568,14 @@ h5 {
   width: clamp(17.5rem, 16.5rem + 2.5vw, 18.75rem);
   margin: 0 auto 1rem;
   background-color: #DBF7F9;
-  padding-top: clamp(1.75rem, 1.3rem + 2.2vw, 2.6875rem);
-  padding-bottom: clamp(1.5rem, 1.1rem + 2vw, 2.375rem);
+  padding-top: 1.75rem;
+  padding-bottom: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .swiper-slide {
+    padding-top: 2.6875rem;
+    padding-bottom: 2.375rem;
+  }
 }
 .swiper-slide__img {
   width: clamp(5rem, 4.5rem + 2vw, 6.25rem);
@@ -584,7 +609,7 @@ h5 {
 .swiper-slide__text {
   padding-left: clamp(0.9375rem, 0.8rem + 0.4vw, 1.125rem);
   padding-right: clamp(0.9375rem, 0.8rem + 0.4vw, 1.125rem);
-  line-height: 2;
+  line-height: 1.97;
   font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
 }
 @media screen and (min-width: 768px) {
@@ -648,22 +673,38 @@ h5 {
 ------------------------------------------ */
 .qa {
   background: linear-gradient(to right, #F4FFE8, #C6F0FE);
-  padding: clamp(1.5625rem, 1.3rem + 1.7vw, 1.875rem) 1rem clamp(2.25rem, 2rem + 0.8vw, 2.5625rem);
+  padding: 1.5625rem 1rem 2.25rem;
+}
+@media screen and (min-width: 768px) {
+  .qa {
+    padding-top: 1.875rem;
+    padding-bottom: 2.5625rem;
+  }
 }
 .qa__inner {
-  max-width: 37.5rem;
-  margin: clamp(2.5rem, 2.2rem + 1.7vw, 2.875rem) auto 0;
+  margin: 2.5rem auto 0;
+}
+@media screen and (min-width: 768px) {
+  .qa__inner {
+    max-width: 37.5rem;
+    margin-top: 2.875rem;
+  }
 }
 
 .accordion {
   display: flex;
   flex-direction: column;
-  row-gap: clamp(1.25rem, 1.1rem + 1.5vw, 1.625rem);
+  row-gap: clamp(1.25rem, 1rem + 1vw, 1.625rem);
 }
 .accordion__common {
   display: flex;
-  column-gap: clamp(0.75rem, 0.6rem + 1.4vw, 1.0625rem);
+  column-gap: 0.75rem;
   font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .accordion__common {
+    column-gap: 1.0625rem;
+  }
 }
 @media screen and (min-width: 768px) {
   .accordion__common--ico {
@@ -707,12 +748,18 @@ h5 {
 /* 矢印アイコン */
 .bi-caret-down-fill {
   position: absolute;
-  top: 33%;
-  right: clamp(0.875rem, 1rem + 1.4vw, 1.3125rem);
+  top: 30%;
+  right: 4%;
   line-height: 1;
   cursor: pointer;
-  font-size: clamp(0.9375rem, 0.8rem + 1.4vw, 1.125rem);
+  font-size: 0.9375rem;
   transition: transform 0.3s ease;
+}
+@media screen and (min-width: 768px) {
+  .bi-caret-down-fill {
+    font-size: 1.125rem;
+    top: 38%;
+  }
 }
 
 /* 矢印アイコンの向きを変える*/
@@ -728,7 +775,7 @@ h5 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: clamp(1.125rem, 1rem + 0.4vw, 1.5rem) 0 1.375rem;
+  padding: 1rem 0 1.375rem;
 }
 @media screen and (min-width: 950px) {
   .footer {
@@ -740,14 +787,16 @@ h5 {
 @media screen and (min-width: 1200px) {
   .footer {
     column-gap: 9.6875rem;
+    padding-top: 1.375rem;
   }
 }
 .footer__top p {
-  font-size: clamp(1.75rem, 1.6rem + 1.4vw, 2rem);
+  font-size: 1.75rem;
   letter-spacing: 5.5px;
 }
 @media screen and (min-width: 768px) {
   .footer__top p {
+    font-size: 2rem;
     letter-spacing: 6px;
   }
 }
@@ -764,7 +813,12 @@ h5 {
   display: flex;
   justify-content: space-between;
   column-gap: 1.875rem;
-  font-size: clamp(0.75rem, 1.6rem + 1.4vw, 0.875rem);
+  font-size: 0.75rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__midst ul {
+    font-size: 0.875rem;
+  }
 }
 .footer__bottom {
   padding-top: 1.25rem;
@@ -775,5 +829,10 @@ h5 {
   }
 }
 .footer__bottom p {
-  font-size: clamp(0.6875rem, 0.65rem + 1vw, 0.75rem);
+  font-size: 0.6875rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__bottom p {
+    font-size: 0.75rem;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -22,11 +22,11 @@
   // 見出し
   &__title {
     position: absolute;
-    top: 50.5vh;
+    top: f.rem(416);
     left: 6vw;
 
     @include v.mq(pc) {
-      top: 31.5vh;
+      top: f.rem(272);
       left: 15vw;
     }
   }

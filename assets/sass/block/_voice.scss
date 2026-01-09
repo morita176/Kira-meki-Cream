@@ -52,8 +52,13 @@ h5 {
   width: clamp(f.rem(280), 16.5rem + 2.5vw, f.rem(300));
   margin: 0 auto 1rem;
   background-color: v.$c-li-green;
-  padding-top: clamp(f.rem(28), 1.3rem + 2.2vw, f.rem(43));
-  padding-bottom: clamp(f.rem(24), 1.1rem + 2vw, f.rem(38));
+  padding-top: f.rem(28);
+  padding-bottom: f.rem(24);
+
+  @include v.mq(pc) {
+    padding-top: f.rem(43);
+    padding-bottom: f.rem(38);
+  }
 
   &__img {
     width: clamp(f.rem(80), 4.5rem + 2vw, f.rem(100));
@@ -88,7 +93,7 @@ h5 {
   &__text {
     padding-left: clamp(f.rem(15), 0.8rem + 0.4vw, f.rem(18));
     padding-right: clamp(f.rem(15), 0.8rem + 0.4vw, f.rem(18));
-    line-height: 2;
+    line-height: 1.97;
     font-size: clamp(f.rem(14), 0.8rem + 0.3vw, f.rem(16));
 
     @include v.mq(pc) {
